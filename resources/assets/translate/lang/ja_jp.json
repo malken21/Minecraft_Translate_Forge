@@ -1,0 +1,10 @@
+{
+  "chat.translate.button": "§6 ✍",
+  "chat.translate.hover": "§6翻訳する",
+  "chat.translate.result": "§6翻訳結果: ",
+  "chat.translate.error": "翻訳できませんでした",
+  "key.category.translate": "Translate Mod",
+  "key.translate.toggle": "自動翻訳 切り替え",
+  "toggle.translate.on": "§c自動翻訳 [ON]",
+  "toggle.translate.off": "§9自動翻訳 [OFF]"
+}
