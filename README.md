@@ -1,0 +1,2 @@
+# Minecraft_Translate_Mod
+Minecraftに翻訳機能を追加するforgeMod
