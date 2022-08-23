@@ -2,10 +2,7 @@ package marumasa.translate;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ChatComponent;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.*;
 
 import java.net.URLEncoder;
 import java.net.http.HttpResponse;
@@ -25,13 +22,21 @@ public class translate extends Thread {
 
     public void run() {
         ChatComponent chat = mc.gui.getChat();
-        MutableComponent resultText = new TranslatableComponent("chat.translate.result");
+        MutableComponent resultText = new TranslatableComponent("result.translate.text");
         final String translate = getGAS(msg, mc.options.languageCode.substring(0, 2));
         Component translateText;
         if (translate != null) {
-            translateText = new TextComponent(translate);
+            ClickEvent clickEvent = new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, translate);
+            Component hoverText = new TranslatableComponent("result.translate.hover");//ホバーした時に表示するテキスト
+            HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverText);
+
+            Style style = Style.EMPTY;
+            style = style.withClickEvent(clickEvent);
+            style = style.withHoverEvent(hoverEvent);
+
+            translateText = new TextComponent(translate).setStyle(style);
         } else {
-            translateText = new TranslatableComponent("chat.translate.error");
+            translateText = new TranslatableComponent("result.translate.error");
         }
         resultText.append(translateText);
         chat.addMessage(resultText);
