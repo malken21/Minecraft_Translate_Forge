@@ -1,0 +1,11 @@
+{
+  "chat.translate.button": "§7 ✍",
+  "chat.translate.hover": "§6Translate",
+  "result.translate.text": "§6Result: ",
+  "result.translate.hover": "§6Copy to Clipboard",
+  "result.translate.error": "Error",
+  "key.category.translate": "Translate Mod",
+  "key.translate.toggle": "Auto Translate Toggle",
+  "toggle.translate.on": "§cAuto Translate [ON]",
+  "toggle.translate.off": "§9Auto Translate [OFF]"
+}
